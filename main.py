@@ -18,7 +18,7 @@ async def generar_audio(request: AudioRequest):
     try:
         # Usamos una voz neuronal de Microsoft en inglés (ideal para ASL)
         # Otras opciones: "en-US-ChristopherNeural" (Hombre) o "en-US-AriaNeural" (Mujer)
-        voz = "en-US-AriaNeural" 
+        voz = "es-MX-DaliaNeural" 
         
         nombre_archivo = "asl_audio.mp3"
         
