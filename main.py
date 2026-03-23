@@ -16,17 +16,16 @@ def home():
 @app.post("/generar-audio")
 async def generar_audio(request: AudioRequest):
     try:
-        # Usamos una voz neuronal de Microsoft en inglés (ideal para ASL)
-        # Otras opciones: "en-US-ChristopherNeural" (Hombre) o "en-US-AriaNeural" (Mujer)
+        
         voz = "es-MX-DaliaNeural" 
         
         nombre_archivo = "asl_audio.mp3"
         
-        # Generar y guardar el audio usando edge-tts
+        
         communicate = edge_tts.Communicate(request.texto, voz)
         await communicate.save(nombre_archivo)
                 
-        # Retornar el archivo para que se descargue o reproduzca
+        
         return FileResponse(
             path=nombre_archivo, 
             media_type="audio/mpeg",
